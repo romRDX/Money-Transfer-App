@@ -57,14 +57,8 @@ or if you want to see the coverage of the tests, run:
 * react-testing-library
 * axios
 
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ---
 
-### Author
-
-Me 😉!
+Made by...Me 😉!
 
 Rômullo Sander A.S.
