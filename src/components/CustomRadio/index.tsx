@@ -32,11 +32,9 @@ const CustomRadio: React.FC<CustomRadioProps> = ({ children, value, cost, isChec
             </PlanDescription>
           </div>
 
-          <Cost>$ {cost.toFixed(2)}</Cost>
+          <Cost data-testid="plan-cost">$ {cost.toFixed(2)}</Cost>
         </Content>
       </Radio>
-
-
     </Container>
   );
 };

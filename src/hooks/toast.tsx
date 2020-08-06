@@ -8,7 +8,7 @@ export interface ToastMessage {
   code: string;
 }
 
-interface AlertMessage {
+export interface AlertMessage {
   active: boolean;
   type: 'success' | 'error' | 'info';
   title: string;

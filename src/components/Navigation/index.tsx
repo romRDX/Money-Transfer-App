@@ -42,6 +42,7 @@ const Navigation: React.FC = () => {
           <NavButton
             isSelected={ selectedContent === 'Services'}
             onClick={ () => setSelectedContent('Services')}
+            placeholder="ServicesPage"
           >
             <AiOutlineAppstore />
             Services
@@ -50,6 +51,7 @@ const Navigation: React.FC = () => {
           <NavButton
             isSelected={ selectedContent === 'Transactions'}
             onClick={ () => setSelectedContent('Transactions')}
+            placeholder="TransactionsPage"
           >
             <FiRepeat />
             Transactions
@@ -58,6 +60,7 @@ const Navigation: React.FC = () => {
           <NavButton
             isSelected={ selectedContent === 'SendMoney'}
             onClick={ () => setSelectedContent('SendMoney')}
+            placeholder="SendMoneyPage"
           >
             <FiShuffle />
             Send Money
@@ -66,6 +69,7 @@ const Navigation: React.FC = () => {
           <NavButton
             isSelected={ selectedContent === 'Cards'}
             onClick={ () => setSelectedContent('Cards')}
+            placeholder="CardsPage"
           >
             <FiCreditCard />
             Cards
@@ -74,6 +78,7 @@ const Navigation: React.FC = () => {
           <NavButton
             isSelected={ selectedContent === 'History'}
             onClick={ () => setSelectedContent('History')}
+            placeholder="HistoryPage"
           >
             <FiDatabase />
             History

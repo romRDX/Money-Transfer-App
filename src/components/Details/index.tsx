@@ -20,7 +20,7 @@ import {
 import { BsArrowRightShort } from 'react-icons/bs';
 import ToastContainer from '../ToastContainer';
 
-const SideBar: React.FC = () => {
+const Details: React.FC = () => {
   const { transfer, confirmTransfer, planOptions } = useTransfer();
 
   return (
@@ -93,9 +93,7 @@ const SideBar: React.FC = () => {
         </div>
 
         <ToastContainer className='errorMessages' />
-
         <ConfirmButton onClick={confirmTransfer}>Confirm</ConfirmButton>
-
       </DeliveryDetails>
 
       <InfoButtons>
@@ -110,4 +108,4 @@ const SideBar: React.FC = () => {
   );
 };
 
-export default SideBar;
+export default Details;

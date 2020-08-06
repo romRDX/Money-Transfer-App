@@ -14,7 +14,7 @@ const ToastContainer: React.FC<ToastContainerProps> = ({ ...rest }) => {
   const { messages } = useToast();
 
   return (
-    <Container {...rest}>
+    <Container data-testid='toastContainer' {...rest}>
       { messages && messages.map((message) => (
         <Toast key={message.id} message={message} />
       ))}

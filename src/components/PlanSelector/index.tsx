@@ -53,17 +53,17 @@ const PlanSelector: React.FC = () => {
       </div>
       <div>
         <Radio.Group onChange={(data) => handleSelectPlan(data)} >
-          <CustomRadio value='Express' isChecked={selectedPlan === 'Express'} cost={0.99}>
-              { selectedDate &&
-                <p>Get <span> {selectedDate.getDate()} {selectedDate.toLocaleString('en-US', { month: 'long' })} </span> till 12pm </p>
-              }
+          <CustomRadio data-testid='Express-plan' value='Express' isChecked={selectedPlan === 'Express'} cost={0.99}>
+            { selectedDate &&
+              <p>Get <span> {selectedDate.getDate()} {selectedDate.toLocaleString('en-US', { month: 'long' })} </span> till 12pm </p>
+            }
             <p>Express</p>
           </CustomRadio>
 
           <CustomRadio value='Standard' isChecked={selectedPlan === 'Standard'} cost={1.00}>
-              { selectedDate &&
-                <p>Get <span> {selectedDate.getDate()} {selectedDate.toLocaleString('en-US', { month: 'long' })} </span> till 6pm  </p>
-              }
+            { selectedDate &&
+              <p>Get <span> {selectedDate.getDate()} {selectedDate.toLocaleString('en-US', { month: 'long' })} </span> till 6pm  </p>
+            }
             <p>Standard</p>
           </CustomRadio>
 

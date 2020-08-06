@@ -19,7 +19,7 @@ import {
 
 import { Brasil, UnitedStates} from './data';
 
-const SideBar: React.FC = () => {
+const Converter: React.FC = () => {
   const { countries } = useCountries();
   const { transfer, setTransfer } = useTransfer();
   const { user } = useAuth();
@@ -90,7 +90,7 @@ const SideBar: React.FC = () => {
               value={selectedOriginCountry}
               className='react-select-container'
               classNamePrefix="react-select"
-              placeholder="Select"
+              placeholder="SelectOriginCurrency"
               options={countries.filter((country) => country.id !== selectedDestinationCountry.id)}
               onChange={handleSelectFromCurrency}
             />
@@ -114,7 +114,7 @@ const SideBar: React.FC = () => {
         </ValueBox>
 
       </div>
-      <FiRefreshCcw onClick={handleSwitchCurrency} />
+      <FiRefreshCcw data-testid="switch-currencies" onClick={handleSwitchCurrency} />
       <div>
 
         <ConversionOptions>
@@ -130,7 +130,7 @@ const SideBar: React.FC = () => {
             value={selectedDestinationCountry}
             className='react-select-container'
             classNamePrefix="react-select"
-            placeholder="Select"
+            placeholder="SelectDestinationCurrency"
             options={countries.filter((country) => country.id !== selectedOriginCountry.id)}
             onChange={handleSelectToCurrency}
           />
@@ -146,4 +146,4 @@ const SideBar: React.FC = () => {
   );
 };
 
-export default SideBar;
+export default Converter;
