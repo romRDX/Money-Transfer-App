@@ -46,7 +46,7 @@ or if you want to see the coverage of the tests, run:
 
 **IMPORTANT** : Please do note that there is some missing tests and failed ones. Do not worry, this is a work in progress.
 
-### Technologies and libraries 📕
+## Technologies and libraries 📕
 
 * React
 * Typescript
