@@ -1,4 +1,6 @@
-# Money-Transfer-App
+<h3 align="center">
+	Money-Transfer-App - ReactJS Application
+</h3>
 
 An awesome app to send money abroad!
 
