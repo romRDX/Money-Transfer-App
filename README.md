@@ -1,5 +1,7 @@
 # Money-Transfer-App
 
+![Money-Transfer-App](https://imgur.com/fFCsMAG)
+
 An awesome app to send money abroad!
 
 ## Features 📄
