@@ -13,23 +13,33 @@ An awesome app to send money abroad!
 
 ## Instalation ⚙
 
-Go to the Money-Transfer-App folder and run this command:
+First, go to the Money-Transfer-App folder, then:
 
-`yarn`
+```bash
+  # Install the dependencies
+  $ yarn
+```
 
-After the instalations of all dependencies are ready run this command:
+After that:
 
-`yarn start`
+```bash
+  # Start the client
+  $ yarn start
+```
 
 ## Testing 🧪
 
 To test the aplication just run this command:
 
-`yarn test`
+```bash
+  yarn test
+```
 
 or if you want to see the coverage of the tests, run:
 
-`yarn test:cover`
+```bash
+  yarn test:cover
+```
 
 **IMPORTANT** : Please do note that there is some missing tests and failed ones. Do not worry, this is a work in progress.
 
@@ -46,3 +56,15 @@ or if you want to see the coverage of the tests, run:
 * jest
 * react-testing-library
 * axios
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+### Author
+
+Me 😉!
+
+Rômullo Sander A.S.
