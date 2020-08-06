@@ -2,7 +2,7 @@
 
 An awesome app to send money abroad!
 
-## Features
+## Features 📄
 
 * See the conversion rate of (almost) any currency.
 * make a transfer with built in currency conversion.
