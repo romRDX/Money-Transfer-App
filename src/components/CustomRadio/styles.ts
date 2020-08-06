@@ -13,8 +13,8 @@ export const Container = styled.div<ICustomCheckProps>`
   border-radius: 4px;
   transition: .2s;
 
-  @media only screen and (max-width: 420px) {
-    padding: 20px 10px;
+  @media only screen and (max-width: 530px) {
+    padding: 20px 15px;
   }
 
   .ant-radio {
@@ -44,18 +44,6 @@ export const Content = styled.div`
       display: flex;
       align-items: center;
     }
-
-    &:last-child {
-      font-weight: 600;
-      font-size: 18px;
-      line-height: 22px;
-      color: #1F2933;
-
-      @media only screen and (max-width: 420px) {
-        font-size: 16px;
-        line-height: 19px;
-      }
-    }
   }
 `;
 
@@ -69,6 +57,10 @@ export const CustomCheck = styled.div<ICustomCheckProps>`
   justify-content: center;
   margin-right: 18px;
 
+  @media only screen and (max-width: 530px) {
+    margin-right: 12px;
+  }
+
   svg {
     display: ${ props => props.isChecked ? 'block' : 'none' };
     width: 24px;
@@ -80,6 +72,15 @@ export const CustomCheck = styled.div<ICustomCheckProps>`
 
 export const Cost = styled.div`
   justify-self: flex-end;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  color: #1F2933;
+
+  @media only screen and (max-width: 750px) {
+    font-size: 16px;
+    line-height: 19px;
+  }
 `;
 
 export const PlanDescription = styled.div`
@@ -94,7 +95,7 @@ export const PlanDescription = styled.div`
     width:80%;
     margin-bottom: 0;
 
-    @media only screen and (max-width: 420px) {
+    @media only screen and (max-width: 750px) {
       font-size: 13px;
       line-height: 16px;
     }

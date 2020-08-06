@@ -30,6 +30,7 @@ export const Content = styled.div`
   }
 
   @media only screen and (max-width: 420px) {
+    padding: 0 15px;
     height: auto;
   }
 `;
