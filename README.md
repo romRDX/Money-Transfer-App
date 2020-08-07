@@ -2,8 +2,12 @@
 	Money-Transfer-App - ReactJS Application
 </h3>
 <p align="center">
-  An awesome app to send money abroad!
+  An awesome app to send money abroad! Take a look
+  <a href="https://brave-kowalevski-affe86.netlify.app/" target="_blank">
+    Here!
+  </a>
 </p>
+
 
 ## Features 📄
 
