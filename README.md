@@ -3,7 +3,7 @@
 </h3>
 <p align="center">
   An awesome app to send money abroad! Take a look
-  <a href="https://brave-kowalevski-affe86.netlify.app/" target="_blank">
+  <a href="https://rdx-money-transfer.netlify.app/" target="_blank">
     Here!
   </a>
 </p>
