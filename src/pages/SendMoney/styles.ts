@@ -5,11 +5,10 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  height: 100%;
+  height: auto;
   width: 100%;
   max-width: 1120px;
   padding: 0 20px;
-  overflow: hidden; /* animation */
 
   @media only screen and (max-width: 1260px) {
     width: 100%;
@@ -59,6 +58,9 @@ export const Content = styled.div`
   justify-content: space-between;
   height: 100%;
   margin-top: 60px;
+
+  /* animation */
+  overflow: hidden;
 
   @media only screen and (max-width: 1260px) {
     padding: 0;
