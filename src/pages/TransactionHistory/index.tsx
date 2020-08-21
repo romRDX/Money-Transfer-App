@@ -7,16 +7,14 @@ import orderBy from 'src/utils/orderBy';
 import filterBy from 'src/utils/filterBy';
 
 import Transfer from './components/Transfer';
-import PlanFilter from './components/PlanFilter';
 import TransactionsFilters from './components/TransactionFilters';
 
 import {
   Container,
   TransactionsList,
-  TransactionsDetails,
 } from './styles';
 
-import { useTransition, animated, useTrail } from 'react-spring'
+import { animated, useTrail } from 'react-spring'
 
 const TransactionHistory: React.FC = () => {
   const [ transactions, setTransactions] = useState<ITransferRecord[]>([]);

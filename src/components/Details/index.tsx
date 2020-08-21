@@ -2,7 +2,7 @@ import React from 'react';
 import { useTransfer } from 'src/hooks/transfer';
 
 import { AiOutlineCalendar } from 'react-icons/ai';
-import { FiDollarSign, FiShuffle, FiFileText, FiHelpCircle } from 'react-icons/fi';
+import { FiDollarSign, FiShuffle } from 'react-icons/fi';
 
 import MiniFlag from 'src/components/MiniFlag';
 

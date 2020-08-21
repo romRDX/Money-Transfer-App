@@ -82,7 +82,7 @@ export const TransferProvider: React.FC = ({ children }) => {
       title: 'Transaction succeeded!',
       message: JSON.stringify(payment, null, 4)
     });
-  },[transfer, planOptions, addToast, addAlert, api]);
+  },[transfer, planOptions, addToast, addAlert]);
 
   return (
     <TransferContext.Provider
