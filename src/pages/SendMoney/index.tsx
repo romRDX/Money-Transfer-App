@@ -4,8 +4,9 @@ import { useAuth } from 'src/hooks/auth';
 import Converter from 'src/components/Converter';
 import Details from 'src/components/Details';
 import PlanSelector from 'src/components/PlanSelector';
+import InfoButtons from 'src/components/InfoButtons';
 
-import { Container, Content, OptionTitle, Balance } from './styles';
+import { Container, Header, Content, MainContent, OptionTitle, Balance } from './styles';
 
 const SendMoney: React.FC = () => {
 
@@ -13,13 +14,23 @@ const SendMoney: React.FC = () => {
 
   return (
     <Container>
+
+      <Header>
+        <div>
+          <OptionTitle>Send Money</OptionTitle>
+          <Balance><span>{user.balance.toLocaleString('en-US')}</span> available</Balance>
+        </div>
+        <InfoButtons />
+      </Header>
+
       <Content>
-        <OptionTitle>Send Money</OptionTitle>
-        <Balance><span>{user.balance.toLocaleString('en-US')}</span> available</Balance>
-        <Converter></Converter>
-        <PlanSelector />
+        <MainContent>
+          <Converter />
+          <PlanSelector />
+        </MainContent>
+        <Details />
       </Content>
-      <Details />
+
     </Container>
   );
 };

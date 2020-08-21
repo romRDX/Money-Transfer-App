@@ -34,9 +34,8 @@ fx.rates = {
 }
 
 const convertValue = (value, fromCurrency, toConvertCurrency) => {
-    const converted = fx.convert(value, {from: fromCurrency, to: toConvertCurrency});
-    const formatted = new Intl.NumberFormat('en-US', { minimumSignificantDigits: 2, maximumSignificantDigits: 2 }).format(converted);
-    return formatted ? formatted : '0';
+  const converted = fx.convert(value, {from: fromCurrency, to: toConvertCurrency});
+  return converted;
 };
 
 export default convertValue;

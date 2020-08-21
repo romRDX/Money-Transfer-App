@@ -1,15 +1,26 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  margin-top: 60px;
   display: flex;
   justify-content: space-between;
+  position: relative;
 
-  /* @media only screen and (max-width: 1260px) {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  } */
+  animation: converterAnimation .8s, 'fadeIn' .8s;
+
+  @keyframes converterAnimation {
+    from {bottom: 50px;}
+    to {bottom: 0px;}
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
 
   @media only screen and (max-width: 740px) {
     flex-direction: column;
@@ -24,20 +35,16 @@ export const Container = styled.div`
   }
 
   > svg {
-    margin-bottom: 50px;
+    margin: 0 35px 50px;
     cursor: pointer;
     align-self: flex-end;
     width: 25px;
     height: 25px;
-    color: #F364A2;
+    color: var(--pink);
     transition: .3s;
 
     &:hover {
       transform: rotate(-90deg);
-    }
-
-    @media only screen and (max-width: 1240px) {
-
     }
 
     @media only screen and (max-width: 740px) {
@@ -48,7 +55,7 @@ export const Container = styled.div`
 `;
 
 export const ConversionOptions = styled.div`
-  padding: 5px 22px;
+  padding: 7px 22px;
   background: #F5F7FA;
   border-radius: 8px;
   color: black;
@@ -60,7 +67,7 @@ export const ConversionOptions = styled.div`
   font-weight: normal;
   font-size: 16px;
   line-height: 19px;
-  color: #52606D;
+  color: var(--gray-3);
 
   @media only screen and (max-width: 740px) {
     width: 370px;
@@ -71,6 +78,11 @@ export const ConversionOptions = styled.div`
     justify-self: flex-start;
   }
 
+  > div {
+    display: flex;
+    align-items: center;
+  }
+
   /* REACT-SELECT STYLES */
   .react-select__control {
     background: transparent;
@@ -79,13 +91,22 @@ export const ConversionOptions = styled.div`
     justify-self: end;
     width: 120px;
     box-shadow: none;
+
+    display: flex;
   }
 
   .react-select__input {
     outline: none;
   }
 
+  .react-select__value-container {
+    padding-right: 0;
+    justify-self: flex-end;
+  }
+
   .react-select__indicator {
+    padding: 8px 0;
+    max-width: 30px;
 
     svg {
       color: black;
@@ -100,7 +121,7 @@ export const ConversionOptions = styled.div`
     font-weight: 600;
     font-size: 16px;
     line-height: 19px;
-    color: #323F4B;
+    color: var(--gray-4);
   }
 `;
 
@@ -121,14 +142,14 @@ export const ValueBox = styled.div`
     font-weight: normal;
     font-size: 14px;
     line-height: 17px;
-    color: #52606D;
+    color: var(--gray-3);
   }
 
   span {
     font-weight: 600;
     font-size: 18px;
     line-height: 22px;
-    color: #323F4B;
+    color: var(--gray-4);
     display: flex;
     align-items: flex-end;
 
@@ -146,7 +167,7 @@ export const ValueBox = styled.div`
       font-weight: 600;
       font-size: 18px;
       line-height: 22px;
-      color: #323F4B;
+      color: var(--gray-4);
       margin: 0 0 0 12px;
     }
   }
@@ -155,7 +176,7 @@ export const ValueBox = styled.div`
     font-weight: 600;
     font-size: 30px;
     line-height: 36px;
-    color: #323F4B;
+    color: var(--gray-4);
     padding: 0;
   }
 `;

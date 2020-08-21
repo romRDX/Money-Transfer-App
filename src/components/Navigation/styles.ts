@@ -1,9 +1,8 @@
 import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
-  display: flex;
-  flex-direction: column;
   position: relative;
+  height: 70%;
 
   svg {
     width: 22px;
@@ -48,7 +47,7 @@ export const UserName = styled.span`
   font-weight: 600;
   font-size: 24px;
   line-height: 29px;
-  color: #1F2933;
+  color: var(--gray-5);
   margin-top: 7px;
 `;
 
@@ -56,7 +55,7 @@ export const UserCode = styled.span`
   font-weight: normal;
   font-size: 16px;
   line-height: 19px;
-  color: #616E7C;
+  color: var(--gray-2);
 `;
 
 
@@ -66,14 +65,18 @@ interface NavMenuProps {
 
 export const NavMenu = styled.div<NavMenuProps>`
   width: 100%;
+  height: 100%;
   box-sizing: border-box;
   color: black;
   transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   @media only screen and (max-width: 1260px) {
     width: 200px;
     z-index: 2;
-    background: #FFF;
+    background: var(--white);
     justify-content: flex-end;
     position: absolute;
     right: 16px;
@@ -113,12 +116,17 @@ export const NavButton = styled.button<NavButtonProps>`
   font-size: 16px;
   line-height: 19px;
   letter-spacing: 0.015em;
-  color: #1F2933;
+  color: var(--gray-5);
 
   ${(props) =>
     props.isSelected &&
     css`
+      color: #E8368F;
       border-left: 6px solid #E8368F;
+
+      svg {
+        color: #E8368F;
+      }
   `}
 
   transition: .3s;
@@ -128,10 +136,6 @@ export const NavButton = styled.button<NavButtonProps>`
 
     @media only screen and (max-width: 1260px) {
       padding-left: 50px;
-    }
-
-    svg {
-      color: #E8368F;
     }
   }
 
@@ -152,7 +156,7 @@ export const ExtraButtons = styled.div<NavMenuProps>`
     svg {
       width: 20px;
       height: 20px;
-      color: #1F2933;
+      color: var(--gray-5);
       transform: scaleX(1) !important;
     }
   }

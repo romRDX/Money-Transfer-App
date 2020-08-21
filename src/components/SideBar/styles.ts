@@ -4,17 +4,29 @@ export const Container = styled.div`
   width: 100%;
   max-width: 300px;
   position: relative;
-  padding-right: 15px;
+
+  animation: sideBarAnimation .8s, 'fadeIn' .8s;
+
+  @keyframes sideBarAnimation {
+    from {right: 50px;}
+    to {right: 0px;}
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
 
   @media only screen and (max-width: 1260px) {
     display: flex;
     max-width: 90%;
     margin: 0 auto;
     justify-content: space-between;
-  }
-
-  @media only screen and (max-width: 1070px) {
-    max-width: 720px;
   }
 `;
 
@@ -54,13 +66,13 @@ export const UserName = styled.span`
   font-weight: 600;
   font-size: 24px;
   line-height: 29px;
-  color: #1F2933;
-  margin-top: 7px;
+  color: var(--gray-5);
+  margin: 7px 0;
 `;
 
 export const UserCode = styled.span`
   font-weight: normal;
   font-size: 16px;
   line-height: 19px;
-  color: #616E7C;
+  color: var(--gray-2);
 `;

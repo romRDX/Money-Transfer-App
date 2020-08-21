@@ -1,15 +1,14 @@
 import React, { createContext, useState, useContext, useCallback } from 'react';
 import { useToast } from './toast';
+import * as api from 'src/services/transactionsAPI';
 
 export interface ITransfer {
-  sentAt: Date | undefined;
+  sentAt: Date;
   plan: string;
   sent: number;
   received: number;
   initialCurrency: string;
-  initialCurrencyFlag: string;
   toConvertCurrency: string;
-  toConvertCurrencyFlag: string,
 }
 
 interface TransferContextData {
@@ -40,9 +39,7 @@ export const TransferProvider: React.FC = ({ children }) => {
     sent: 0,
     received: 0,
     initialCurrency: "BRL",
-    initialCurrencyFlag: "https://www.countryflags.io/br/flat/64.png",
     toConvertCurrency: "USD",
-    toConvertCurrencyFlag: "https://www.countryflags.io/us/flat/64.png",
   });
 
   const confirmTransfer = useCallback(()=>{
@@ -64,16 +61,12 @@ export const TransferProvider: React.FC = ({ children }) => {
     if(!plan || sent === 0)
       return;
 
-    const deliveryDate = new Date();
-
-    if(sentAt)
-      deliveryDate.setDate(sentAt?.getDate());
-      deliveryDate.setHours(planOptions[plan]);
-      deliveryDate.setMinutes(0);
-      deliveryDate.setSeconds(0);
+    sentAt.setHours(planOptions[plan]);
+    sentAt.setMinutes(0);
+    sentAt.setSeconds(0);
 
     const payment = {
-      sentAt: deliveryDate,
+      sentAt,
       plan,
       sent,
       received,
@@ -81,13 +74,15 @@ export const TransferProvider: React.FC = ({ children }) => {
       to: toConvertCurrency,
     }
 
+    api.post(payment);
+
     addAlert({
       active: true,
       type: 'success',
       title: 'Transaction succeeded!',
       message: JSON.stringify(payment, null, 4)
     });
-  },[transfer, planOptions, addToast, addAlert]);
+  },[transfer, planOptions, addToast, addAlert, api]);
 
   return (
     <TransferContext.Provider

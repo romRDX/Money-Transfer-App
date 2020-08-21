@@ -16,20 +16,20 @@ export const OptionTitle = styled.div`
   font-weight: 500;
   font-size: 30px;
   line-height: 36px;
-  color: #1F2933;
+  color: var(--gray-5);
 `;
 
 export const Balance = styled.div`
   font-weight: normal;
   font-size: 16px;
   line-height: 19px;
-  color: #616E7C;
+  color: var(--gray-2);
 
   span {
     font-weight: bold;
     font-size: 30px;
     line-height: 36px;
-    color: #F364A2;
+    color: var(--pink);
     margin-right: 9px;
   }
 `;

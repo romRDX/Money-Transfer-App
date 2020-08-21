@@ -14,7 +14,6 @@ import {
   ArrowIcon,
   PaymentInfo,
   ConfirmButton,
-  InfoButtons,
 } from './styles';
 
 import { BsArrowRightShort } from 'react-icons/bs';
@@ -32,8 +31,7 @@ const Details: React.FC = () => {
             <span>{ transfer.sent && transfer.sent.toLocaleString('en-US',{minimumFractionDigits: 2}) }</span>
             <div>
               <MiniFlag
-                flag={transfer.initialCurrencyFlag}
-                flagName={transfer.initialCurrency}
+                id={transfer.initialCurrency}
                 size={12}
               />
               <p>{transfer.initialCurrency}</p>
@@ -46,8 +44,7 @@ const Details: React.FC = () => {
             <span>{ transfer.received && transfer.received.toLocaleString('en-US',{minimumFractionDigits: 2}) }</span>
             <div>
               <MiniFlag
-                flag={transfer.toConvertCurrencyFlag}
-                flagName={transfer.toConvertCurrency}
+                id={transfer.toConvertCurrency}
                 size={12}
               />
               <p>{transfer.toConvertCurrency}</p>
@@ -95,15 +92,6 @@ const Details: React.FC = () => {
         <ToastContainer className='errorMessages' />
         <ConfirmButton onClick={confirmTransfer}>Confirm</ConfirmButton>
       </DeliveryDetails>
-
-      <InfoButtons>
-          <div>
-            <FiFileText />
-          </div>
-          <div>
-            <FiHelpCircle />
-          </div>
-      </InfoButtons>
     </Container>
   );
 };

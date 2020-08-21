@@ -5,6 +5,7 @@ import CustomAlert from 'src/components/CustomAlert';
 import SideBar from 'src/components/SideBar';
 
 import SendMoney from '../SendMoney';
+import TransactionHistory from '../TransactionHistory';
 
 import { Container } from './styles';
 
@@ -16,6 +17,7 @@ const Dashboard: React.FC = () => {
       <SideBar />
 
       { selectedContent === 'SendMoney' && <SendMoney /> }
+      { selectedContent === 'History' && <TransactionHistory /> }
 
       <CustomAlert />
     </Container>

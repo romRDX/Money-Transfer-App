@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext, useEffect } from 'react';
+import React, { createContext, useState, useContext, useEffect, useCallback } from 'react';
 import countriesApi from 'src/services/countriesApi';
 
 export interface ICountry {
@@ -10,12 +10,13 @@ export interface ICountry {
 
 interface CountriesContextData {
   countries: ICountry[];
+  getCountryById(id: string): ICountry | undefined;
 }
 
 const CountriesContext = createContext<CountriesContextData>({} as CountriesContextData);
 
 export const CountriesProvider: React.FC = ({ children }) => {
-  const [ countries, setCountries] = useState([]);
+  const [ countries, setCountries] = useState<ICountry[]>([]);
 
   useEffect(() => {
     countriesApi.get('/currencies').then((response) => {
@@ -23,9 +24,13 @@ export const CountriesProvider: React.FC = ({ children }) => {
     });
   }, []);
 
+  const getCountryById = useCallback((id: string) => {
+    return countries.find( country => country.id === id);
+  },[countries]);
+
   return (
     <CountriesContext.Provider
-      value={{ countries }}
+      value={{ countries, getCountryById }}
     >
       {children}
     </CountriesContext.Provider>

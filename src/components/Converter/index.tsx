@@ -39,9 +39,7 @@ const Converter: React.FC = () => {
       sent: toSendValue,
       received: convertedToSendValue,
       initialCurrency: selectedOriginCountry.value,
-      initialCurrencyFlag: selectedOriginCountry.flag,
       toConvertCurrency: selectedDestinationCountry.value,
-      toConvertCurrencyFlag: selectedDestinationCountry.flag,
       }
     });
   }, [
@@ -79,21 +77,22 @@ const Converter: React.FC = () => {
       <div>
         <ConversionOptions>
             <span>From:</span>
-            { selectedOriginCountry &&
-              <MiniFlag
-                flag={selectedOriginCountry.flag}
-                flagName={selectedOriginCountry.label}
-                size={20}
+            <div>
+              { selectedOriginCountry &&
+                <MiniFlag
+                  id={selectedOriginCountry.id}
+                  size={20}
+                />
+              }
+              <Select
+                value={selectedOriginCountry}
+                className='react-select-container'
+                classNamePrefix="react-select"
+                placeholder="SelectOriginCurrency"
+                options={countries.filter((country) => country.id !== selectedDestinationCountry.id)}
+                onChange={handleSelectFromCurrency}
               />
-            }
-            <Select
-              value={selectedOriginCountry}
-              className='react-select-container'
-              classNamePrefix="react-select"
-              placeholder="SelectOriginCurrency"
-              options={countries.filter((country) => country.id !== selectedDestinationCountry.id)}
-              onChange={handleSelectFromCurrency}
-            />
+            </div>
         </ConversionOptions>
 
         <ValueBox>
@@ -119,26 +118,27 @@ const Converter: React.FC = () => {
 
         <ConversionOptions>
           <span>To:</span>
-          { selectedDestinationCountry &&
-            <MiniFlag
-              flag={selectedDestinationCountry.flag}
-              flagName={selectedDestinationCountry.label}
-              size={20}
-            />
-          }
-          <Select
-            value={selectedDestinationCountry}
-            className='react-select-container'
-            classNamePrefix="react-select"
-            placeholder="SelectDestinationCurrency"
-            options={countries.filter((country) => country.id !== selectedOriginCountry.id)}
-            onChange={handleSelectToCurrency}
+          <div>
+            { selectedDestinationCountry &&
+              <MiniFlag
+                id={selectedDestinationCountry.id}
+                size={20}
+              />
+            }
+            <Select
+              value={selectedDestinationCountry}
+              className='react-select-container'
+              classNamePrefix="react-select"
+              placeholder="SelectDestinationCurrency"
+              options={countries.filter((country) => country.id !== selectedOriginCountry.id)}
+              onChange={handleSelectToCurrency}
           />
+          </div>
         </ConversionOptions>
 
         <ValueBox>
           <p>Recipient gets</p>
-          <span><b>{convertedToSendValue}</b><p>{transfer.toConvertCurrency}</p></span>
+          <span><b>{convertedToSendValue.toLocaleString('en-US',{maximumFractionDigits: 2})}</b><p>{transfer.toConvertCurrency}</p></span>
         </ValueBox>
       </div>
 

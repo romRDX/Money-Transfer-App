@@ -7,8 +7,10 @@ interface ContentContextData {
 
 const ContentContext = createContext<ContentContextData>({} as ContentContextData);
 
+type ApplicationContent = 'Services' | 'Transactions' | 'SendMoney' | 'Cards' | 'History';
+
 export const ContentProvider: React.FC = ({ children }) => {
-  const [ selectedContent, setSelectedContent] = useState('SendMoney');
+  const [ selectedContent, setSelectedContent] = useState<ApplicationContent>('SendMoney');
 
   return (
     <ContentContext.Provider

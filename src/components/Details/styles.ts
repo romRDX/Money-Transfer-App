@@ -2,16 +2,34 @@ import styled from 'styled-components';
 import { shade } from 'polished';
 
 export const Container = styled.div`
-  margin: 220px 4% 0 0;
   height: fit-content;
-  width: 390px;
+  width: 100%;
+  max-width: 400px;
   color: black;
+  position: relative;
+  animation: detailsAnimation .8s, 'fadeIn' .8s;
+
+  @keyframes detailsAnimation {
+    from {left: 50px;}
+    to {left: 0px;}
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      position: absolute;
+    }
+
+    100% {
+      opacity: 1;
+      position: relative;
+    }
+  }
 
   @media only screen and (max-width: 1071px) {
     margin: 50px auto;
     width: 100%;
     max-width: 720px;
-    padding: 0 30px;
   }
 
   @media only screen and (max-width: 420px) {
@@ -22,7 +40,7 @@ export const Container = styled.div`
 
 export const PaymentDetails = styled.div`
   padding: 40px 40px 60px;
-  border: 2px solid #E4E7EB;
+  border: 2px solid var(--gray-1);
   border-bottom: 0;
   border-radius: 4px 4px 0 0;
 
@@ -37,7 +55,7 @@ export const PaymentDetails = styled.div`
     font-size: 24px;
     line-height: 29px;
     letter-spacing: 0.015em;
-    color: #1F2933;
+    color: var(--gray-5);
   }
 `;
 
@@ -54,7 +72,7 @@ export const ConversionDetails = styled.div`
     p {
       font-size: 14px;
       line-height: 17px;
-      color: #52606D;
+      color: var(--gray-3);
       margin: 0 0 0 8px;
     }
   }
@@ -63,7 +81,7 @@ export const ConversionDetails = styled.div`
     font-weight: 600;
     font-size: 18px;
     line-height: 22px;
-    color: #1F2933;
+    color: var(--gray-5);
     display: flex;
     justify-content: center;
   }
@@ -87,7 +105,7 @@ export const ArrowIcon = styled.div`
 
 export const DeliveryDetails = styled.div`
   padding: 50px 40px 40px 40px;
-  border: 2px solid #E4E7EB;
+  border: 2px solid var(--gray-1);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -102,7 +120,7 @@ export const DeliveryDetails = styled.div`
     font-size: 24px;
     line-height: 29px;
     letter-spacing: 0.015em;
-    color: #1F2933;
+    color: var(--gray-5);
   }
 `;
 
@@ -133,7 +151,7 @@ export const PaymentInfo = styled.div`
     font-weight: 600;
     font-size: 18px;
     line-height: 22px;
-    color: #1F2933;
+    color: var(--gray-5);
     margin-bottom: 0;
   }
 
@@ -151,52 +169,17 @@ export const ConfirmButton = styled.button`
   padding: 12px;
   border: 0;
   outline: 0;
-  background: #F364A2;
+  margin-bottom: 6px;
+  background: var(--pink);
   border-radius: 4px;
   font-weight: 500;
   font-size: 18px;
   line-height: 22px;
-  color: #FFFFFF;
+  color: var(--white);
 
   transition: 0.3s;
 
   &:hover {
     background: ${shade(0.1, '#F364A2')};
-  }
-`;
-
-export const InfoButtons = styled.div`
-  position: absolute;
-  right: 58px;
-  top: 82px;
-  display: flex;
-
-  @media only screen and (max-width: 1261px) {
-    right: 5%;
-  }
-
-  @media only screen and (max-width: 1260px) {
-    display: none;
-  }
-
-  div {
-    width: 54px;
-    height: 54px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0px 2px 7px rgba(123, 135, 148, 0.28);
-    cursor: pointer;
-
-    &:first-child {
-      margin-right: 27px;
-    }
-
-    svg {
-      width: 20px;
-      height: 20px;
-      color: #1F2933;
-    }
   }
 `;

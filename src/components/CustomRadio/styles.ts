@@ -8,13 +8,13 @@ export const Container = styled.div<ICustomCheckProps>`
   border: 2px solid ${ props => props.isChecked ? '#FF8CBA' : '#E4E7EB' };
   background: ${ props => props.isChecked ? '#FFF6F9' : 'transparent' };
   width: 100%;
-  padding: 21px;
+  /* padding: 21px; */
   margin: 0 0 20px;
   border-radius: 4px;
   transition: .2s;
 
   @media only screen and (max-width: 530px) {
-    padding: 20px 15px;
+    /* padding: 20px 15px; */
   }
 
   .ant-radio {
@@ -75,7 +75,7 @@ export const Cost = styled.div`
   font-weight: 600;
   font-size: 18px;
   line-height: 22px;
-  color: #1F2933;
+  color: var(--gray-5);
 
   @media only screen and (max-width: 750px) {
     font-size: 16px;
@@ -91,7 +91,7 @@ export const PlanDescription = styled.div`
     font-size: 14px;
     line-height: 17px;
     font-weight: normal;
-    color: #616E7C;
+    color: var(--gray-2);
     width:80%;
     margin-bottom: 0;
 

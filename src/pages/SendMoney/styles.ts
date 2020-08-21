@@ -3,12 +3,17 @@ import styled from 'styled-components';
 export const Container = styled.div`
   position: relative;
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: column;
+  justify-content: space-around;
   height: 100%;
-  width: 85%;
+  width: 100%;
+  max-width: 1120px;
+  padding: 0 20px;
+  overflow: hidden; /* animation */
 
   @media only screen and (max-width: 1260px) {
     width: 100%;
+    margin: 0 auto;
   }
 
   @media only screen and (max-width: 1071px) {
@@ -19,14 +24,48 @@ export const Container = styled.div`
   }
 `;
 
-export const Content = styled.div`
-  height: 100%;
-  padding: 0 50px;
+export const Header = styled.div`
   width: 100%;
-  max-width: 720px;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 70px;
 
-  @media only screen and (max-width: 1145px) {
-    padding: 0 30px;
+  position: relative;
+
+  animation: headerAnimation .8s, 'fadeIn' .8s;
+
+  @keyframes headerAnimation {
+    from {bottom: 50px;}
+    to {bottom: 0px;}
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @media only screen and (max-width: 1070px) {
+    max-width: 635px;
+  }
+`;
+
+export const Content = styled.div`
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  margin-top: 60px;
+
+  @media only screen and (max-width: 1260px) {
+    padding: 0;
+  }
+
+  @media only screen and (max-width: 1070px) {
+    flex-direction: column;
   }
 
   @media only screen and (max-width: 420px) {
@@ -35,29 +74,33 @@ export const Content = styled.div`
   }
 `;
 
+export const MainContent = styled.div`
+  padding-right: 50px;
+
+  @media only screen and (max-width: 1070px) {
+    padding: 0;
+  }
+`;
+
 export const OptionTitle = styled.div`
-  margin: 70px 0 15px 0;
+  margin: 0 0 15px 0;
   font-weight: 500;
   font-size: 30px;
   line-height: 36px;
-  color: #1F2933;
-
-  @media only screen and (max-width: 1145px) {
-    margin-top: 40px;
-  }
+  color: var(--gray-5);
 `;
 
 export const Balance = styled.div`
   font-weight: normal;
   font-size: 16px;
   line-height: 19px;
-  color: #616E7C;
+  color: var(--gray-2);
 
   span {
     font-weight: bold;
     font-size: 30px;
     line-height: 36px;
-    color: #F364A2;
+    color: var(--pink);
     margin-right: 9px;
   }
 `;

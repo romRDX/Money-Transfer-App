@@ -1,16 +1,28 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Container } from './styles';
 
+import { useCountries, ICountry } from 'src/hooks/countries';
+
 interface MiniFlagProps {
-  flag: string;
-  flagName: string;
+  id: string;
   size: number;
 }
 
-const MiniFlag: React.FC<MiniFlagProps> = ({flag, flagName, size}) => (
-  <Container size={size}>
-    <img src={flag} alt={flagName} />
-  </Container>
-);
+const MiniFlag: React.FC<MiniFlagProps> = ({id,  size}) => {
+  const { getCountryById } = useCountries();
+
+  const [ selectedCountry, setSelectedCountry] = useState<ICountry>({} as ICountry);
+
+  useEffect(()=>{
+    const country = getCountryById(id);
+    if(country){
+      setSelectedCountry(country);
+    }
+  },[id, getCountryById]);
+
+  return (
+    <Container size={size} backgroundImg={selectedCountry?.flag} />
+  );
+};
 
 export default MiniFlag;

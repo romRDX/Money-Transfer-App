@@ -23,7 +23,7 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   width: 420px;
-  background: #FFF;
+  background: var(--white);
   height: fit-content;
   padding: 20px 0;
   border-radius: 15px;
@@ -37,11 +37,11 @@ export const Content = styled.div`
     font-weight: 500;
     margin-bottom: 10px;
     text-align: center;
-    color: #F364A2;
+    color: var(--pink);
   }
 
   div {
-    border-top: 2px solid #E4E7EB;
+    border-top: 2px solid var(--gray-1);
     padding-top: 15px;
 
     pre {
@@ -62,7 +62,7 @@ export const CloseButton = styled.button`
   svg {
     width: 32px;
     height: 32px;
-    color: #F364A2;
+    color: var(--pink);
   }
 `;
 

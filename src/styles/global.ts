@@ -2,6 +2,16 @@ import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
 
+  :root {
+    --white: #FFF;
+    --gray-1: #E4E7EB;
+    --gray-2: #616E7C;
+    --gray-3: #52606D;
+    --gray-4: #323f4b;
+    --gray-5: #1F2933;
+    --pink: #F364A2;
+  }
+
   * {
     margin: 0;
     padding: 0;
@@ -18,13 +28,13 @@ export default createGlobalStyle`
 
   body {
     position: relative;
-    background:	#FFF;
-    color: #FFF;
+    background:	var(--white);
+    color: var(--white);
     -webkit-font-smoothing: antialiased;
   }
 
   body, input, button {
-    font: 16px "Roboto Slab", sans-serif;
+    font: 16px "Inter", sans-serif;
     font-size: 16px;
   }
 
